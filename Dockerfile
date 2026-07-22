@@ -40,10 +40,10 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction \
 
 # Point Apache at Laravel's public/ folder instead of the repo root
 ENV APACHE_DOCUMENT_ROOT=/var/www/html/public
-COPY docker/000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 
-COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
 EXPOSE 10000
