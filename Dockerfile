@@ -11,7 +11,7 @@ RUN npm run build
 
 
 # --- Stage 2: PHP + Apache runtime ---
-FROM php:8.3-apache AS app
+FROM php:8.4-apache AS app
 
 # System packages + PHP extensions Laravel needs
 RUN apt-get update && apt-get install -y \
