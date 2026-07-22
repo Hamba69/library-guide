@@ -1,0 +1,1 @@
+{{-- Intentionally minimal. Our navbar is in layouts/app.blade.php --}}
